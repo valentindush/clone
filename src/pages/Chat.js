@@ -17,6 +17,7 @@ export default function Chat() {
     }
   },[])
 
+  
   return (
     <section className='w-full  flex bg-slate-800 p-3'>
       <Users/>

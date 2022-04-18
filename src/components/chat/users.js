@@ -7,13 +7,12 @@ import { usersRoute } from '../../utils/APIRoutes'
 export default function Users() {
 
     const [users, setUsers] = useState([])
-    const [currentUser, setCurrentUser] = useState([])
+    const [currentUser, setCurrentUser] = useState({})
     const [currentChat, setCurrentChat] = useState([])
 
     useEffect(()=>{
         const user = JSON.parse(localStorage.getItem('clone_user_data'))
         setCurrentUser(user)
-        console.log("user"+currentUser)
     },[])
 
     const getUsers = async ()=>{
@@ -46,7 +45,7 @@ const handeleSetCurrentChat = (e)=>{
             {users.length > 0 && (
                 <>
                 {users.map(user => (
-                    <UserItem name={user.username} lastMsg = "Hahiye blada" src={img} time="11 : 12 PM" onClick={handeleSetCurrentChat} />
+                    <UserItem name={user.username} lastMsg = "Hahiye blada" src={img} time="11 : 12 PM" onClick={handeleSetCurrentChat} to={user._id} />
                 ))}
                 </>                
             )}
@@ -56,7 +55,7 @@ const handeleSetCurrentChat = (e)=>{
                     <img src={img} className="rounded-full" alt='profile' />
                 </div>
                 <div>
-                    <span className='text-white text-sm'>Pro Ghee</span>
+                    <span className='text-white text-sm'>{currentUser.username}</span>
                 </div>
             </div>
         </div>

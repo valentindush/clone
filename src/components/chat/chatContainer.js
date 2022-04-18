@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import img from '../img/th.jpg'
 import Msg from './msg'
-import EmojiPicker from 'emoji-picker-react'
 import ChatInput from './chatInput'
 export default function ChatContainer() {
 
   const [chats, setChats] = useState(<></>);
+
 
   const addToChats = (message, position)=>{
 
@@ -44,16 +44,6 @@ export default function ChatContainer() {
 
 
    <div className='px-3 py-4 h-[85vh] overflow-auto'> 
-    {/* <Msg text="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum " type="left"/>
-    <Msg text="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum " type="right"/>
-    <Msg text="lorem ipsum lorem ipsusum  lorem ipsum " type="right"/>
-    <Msg text="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum " type="left"/>
-    <Msg text="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum " type="right"/>
-    <Msg text="lorem ipsum lorem ipsusum  lorem ipsum " type="right"/>
-    <Msg text="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum " type="left"/>
-    <Msg text="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum " type="right"/>
-    <Msg text="lorem ipsum lorem ipsusum  lorem ipsum " type="right"/>
-    <Msg text="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum " type="left"/> */}
     {chats}
    </div>
 
